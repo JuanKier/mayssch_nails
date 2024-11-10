@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    font-size: 1.2rem; /* Tamaño de fuente reducido */
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem; /* Tamaño de fuente ajustado */
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+}
+
+.button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    background-color: #007bff; /* Color de fondo por defecto */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+.addUpdateCustomer {
+    background-color: #007bff;
+}
+
+.addUpdateCustomer:hover {
+    background-color: #0056b3;
+}
+
+.backButton {
+    background-color: #28a745; /* Color del botón de volver */
+}
+
+.backButton:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    color: #333;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 5% auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.history-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.history-list li:last-child {
+    border-bottom: none;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Tabla */
+#appointmentTable {
+    width: 100%; /* La tabla ocupará todo el ancho del contenedor */
+    border-collapse: collapse; /* Colapsa los bordes para que se vean más limpios */
+    table-layout: fixed; /* Hace que la tabla se ajuste de manera eficiente */
+}
+
+/* Encabezados de la tabla */
+#appointmentTable th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Celdas de la tabla */
+#appointmentTable td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Borde sutil */
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Estilo para las filas al pasar el mouse */
+#appointmentTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #appointmentTable th, #appointmentTable td {
+        font-size: 12px; /* Reducir tamaño de fuente en pantallas pequeñas */
+        padding: 8px; /* Reducir el espacio en las celdas */
+    }
+}

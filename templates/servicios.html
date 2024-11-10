@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='servicios.js') }}"></script>
+    <title>Gestión de Servicios</title>
+</head>
+<body>
+
+<div class="container" id="services-container">
+    <h2>Gestión de Servicios</h2>
+    
+    <!-- Inputs para nombre y precio del servicio -->
+    <input type="text" id="service-name" placeholder="Nombre del Servicio" required>
+    <input type="text" id="service-price" placeholder="Precio (Gs)" required>
+
+    <!-- Botón para agregar o actualizar servicio -->
+    <button onclick="addOrUpdateService()">Agregar/Actualizar Servicio</button>
+
+    <!-- Tabla para listar servicios -->
+    <table>
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Precio (Gs)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="services-table">
+            <!-- Las filas de servicios se cargarán aquí dinámicamente -->
+        </tbody>
+    </table>
+
+    <a href="/" class="button">⬅️ Volver</a>
+</div>
+
+</body>
+</html>

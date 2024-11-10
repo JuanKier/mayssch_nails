@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Citas - Manicura y Pedicura</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="main-content" class="centered-content">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <h1>May Scheroch Nails</h1>
+        <h2>Sistema de Gestión</h2>
+        <p>Seleccione una opción para continuar:</p>
+        
+        <div class="button-container">
+            <a href="/citas" class="button">Citas</a>
+            <a href="/clientes" class="button">Clientes</a>
+            <a href="/servicios" class="button">Servicios</a>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

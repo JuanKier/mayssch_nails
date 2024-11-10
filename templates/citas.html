@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Citas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='citas.js') }}"></script>
+</head>
+<body>
+    <div id="main-content" class="container">
+        <h1>Gestión de Citas</h1>
+        
+        <!-- Autocompletado para Nombre del Cliente -->
+        <div class="input-group">
+            <label for="clientSearch">Nombre del Cliente:</label>
+            <input type="text" id="clientSearch" list="customerList" placeholder="Buscar Cliente" required>
+            <datalist id="customerList"></datalist> <!-- Datalist para autocompletar -->
+        </div>
+        
+        <div class="input-group">
+            <label for="phone">Teléfono del Cliente:</label>
+            <input type="text" id="phone" placeholder="Teléfono" readonly> <!-- Solo lectura, se llena al seleccionar cliente -->
+        </div>    
+
+        <div class="input-group">
+            <label for="date">Selecciona una fecha:</label>
+            <input type="date" id="date" onchange="updateDayOfWeek()" />
+            <p id="dayOfWeek" style="display:none; font-weight: bold;"></p>
+        </div>       
+
+        <!-- Campo de Hora con formato automático sin colon -->
+        <div class="form-group">
+            <label for="time">Hora</label>
+            <select id="time">
+                <option value="07:00">07:00</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+                <option value="23:00">23:00</option>
+            </select>
+        </div>      
+
+        <div class="form-group">
+            <label for="service">Servicio</label>
+            <select id="service">
+                <!-- Opciones de servicios se cargarán aquí -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Estado</label>
+            <select id="status">
+                <option value="Pendiente">Pendiente</option>
+                <option value="Finalizado">Finalizado</option>
+            </select>
+        </div>
+
+        <!-- Botones grandes con íconos para agendar y limpiar citas -->
+        <div class="button-group">
+            <button class="large-button" onclick="addOrUpdateAppointment()">📅 Agendar Cita</button>
+            <button class="large-button" onclick="clearAppointments()">🗑️ Limpiar Citas</button>
+        </div>
+
+        <h2>Lista de Citas</h2>
+        <div class="table-container">
+            <table id="appointmentTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Día</th>
+                        <th>Hora</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <a href="/" class="button">⬅️ Volver</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery para facilitar las operaciones DOM -->
+    <script defer src="{{ url_for('static', filename='clientes.js') }}"></script>
+</head>
+<body>
+    <div class="container" id="main-content">
+        <h2>Gestión de Clientes</h2>
+        
+        <div class="input-group">
+            <label for="name">Nombre del Cliente:</label>
+            <input type="text" id="name" placeholder="Nombre del Cliente" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" placeholder="Teléfono" required>
+        </div>
+        
+        <button id="addUpdateCustomer">Agregar/Actualizar Cliente</button>
+        
+        <table id="customersTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se generarán dinámicamente aquí -->
+            </tbody>
+        </table>
+        
+        <a href="/" class="button">⬅️ Volver</a>
+    </div>
+    
+    <div id="serviceHistoryDialog" class="modal">
+        <div class="modal-content">
+            <h3>Historial de Servicios</h3>
+            <div id="historyListView" class="history-list">
+            </div>
+            <button id="clearHistoryButton">Limpiar Historial</button>
+            <button id="closeDialogButton">Cerrar</button>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
